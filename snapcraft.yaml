@@ -1,0 +1,21 @@
+name: test-secret
+version: 0.0.1
+summary: This is a snap I like to test
+description: >
+  Just a test python snap
+confinement: strict
+base: core18
+
+architectures:
+  - build-on: arm64
+  - build-on: i386
+
+parts:
+  test-secret:
+    plugin: python
+    python-version: python3
+    source: .
+
+apps:
+  test-secret:
+    command: python3 test_snap.py
